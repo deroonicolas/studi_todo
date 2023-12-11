@@ -30,7 +30,6 @@ export default function useAsyncStorageCRUD() {
     const newtoDoList = [...toDoList]
     newtoDoList.push(toDo)
     const jsonValue = JSON.stringify(newtoDoList)
-
     await AsyncStorage.setItem('toDoList', jsonValue)
     toDoListChange(newtoDoList)
   }

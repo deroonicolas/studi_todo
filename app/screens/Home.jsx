@@ -24,7 +24,6 @@ function Home({ navigation }) {
     navigation.navigate('ToDoCreate')
   }
   const { toDoList, toDoUpdate, toDoDelete } = useAsyncStorageCRUD()
-  console.log(toDoList)
   return (
     <ScrollView contentContainerStyle={styles.container}>
       <Title>Mon appli ToDo</Title>
@@ -35,16 +34,18 @@ function Home({ navigation }) {
         function handleCheckedChange() {
           toDoUpdate(index, { title, description, checked: !checked })
         }
-        ;<ToDoCard
-          key={index}
-          title={title}
-          checked={checked}
-          description={description}
-          handleDelete={handleDelete}
-          handleCheckedChange={handleCheckedChange}
-        />
+        return (
+          <ToDoCard
+            key={index}
+            title={title}
+            checked={checked}
+            description={description}
+            handleDelete={handleDelete}
+            handleCheckedChange={handleCheckedChange}
+          />
+        )
       })}
-      <Button title="Go to create page" onPress={handlePress}>
+      <Button title="Aller à la page de création" onPress={handlePress}>
         Aller à la page de création
       </Button>
     </ScrollView>

@@ -16,32 +16,39 @@ export default function ToDoCard({
     container: {
       flexDirection: 'row',
       borderBottomWidth: 1,
-      borderBottomColor: 'rgba(60, 60, 67, O.6)',
+      borderBottomColor: 'rgba(60, 60, 67, 0.6)',
+      margin: 2,
       width: '100%',
     },
     checkBox: {
-      width: 40,
-      height: 40,
+      width: 30,
+      height: 30,
       marginRight: 12,
       borderWidth: 1,
-      borderColor: 'rgba(60, 60, 67, O.6)',
+      borderColor: 'rgba(60, 60, 67, 0.6)',
       borderRadius: 4,
       paddingBottom: 16,
-      marginBottom: 16,
+      marginBottom: 32,
+      marginTop: 4,
       justifyContent: 'center',
       alignItems: 'center',
     },
     title: {
       fontWeight: '600',
-      marginBottom: 4,
+      marginBottom: 0,
       fontSize: 18,
     },
     description: {
-      color: 'rgba(60, 60, 67, O.6)',
+      color: 'rgba(60, 60, 67, 0.6)',
       fontSize: 16,
-      marginBottom: 8,
+      marginBottom: 2,
     },
-    deleteText: { color: 'rgba(0,122,255,1)', fontSize: 15, fontWeight: 600 },
+    deleteText: {
+      color: 'rgba(0,122,255,1)',
+      fontSize: 15,
+      fontWeight: '600',
+      marginBottom: 12,
+    },
   })
   return (
     <View style={styles.container}>
