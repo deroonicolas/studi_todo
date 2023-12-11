@@ -30,7 +30,7 @@ export default function ToDoCreate() {
           onChange={onChange}
         />
       ))}
-      <Button onPress={handleSubmit}>Ajouter une ToDo</Button>
+      <Button onPress={handleSubmit}>Ajouter</Button>
     </View>
   )
 }

@@ -27,15 +27,11 @@ export default function useAsyncStorageCRUD() {
   // Create
   async function todoCreate(toDo) {
     // Nouveau tableau
-    console.log(toDoList)
     const newtoDoList = [...toDoList]
     newtoDoList.push(toDo)
     const jsonValue = JSON.stringify(newtoDoList)
-    try {
-      await AsyncStorage.setItem('toDoList', jsonValue)
-    } catch (e) {
-      console.log(e)
-    }
+
+    await AsyncStorage.setItem('toDoList', jsonValue)
     toDoListChange(newtoDoList)
   }
 
