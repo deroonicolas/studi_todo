@@ -5,7 +5,7 @@ export default function useNewToDoManage() {
   const [title, setTitle] = useState('')
   const [description, setDescription] = useState('')
 
-  const { todoCreate } = useAsyncStorageCRUD()
+  const { toDoCreate } = useAsyncStorageCRUD()
   const fieldsTab = [
     {
       value: title,
@@ -27,7 +27,7 @@ export default function useNewToDoManage() {
       // eslint-disable-next-line no-alert
       alert('La tâche doit avoir un titre')
     }
-    await todoCreate({ title, description, checked: false })
+    await toDoCreate({ title, description, checked: false })
     setTitle('')
     setDescription('')
   }

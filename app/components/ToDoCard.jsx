@@ -21,13 +21,13 @@ export default function ToDoCard({
       width: '100%',
     },
     checkBox: {
-      width: 30,
-      height: 30,
+      width: 32,
+      height: 32,
       marginRight: 12,
       borderWidth: 1,
       borderColor: 'rgba(60, 60, 67, 0.6)',
       borderRadius: 4,
-      paddingBottom: 16,
+      paddingBottom: 2,
       marginBottom: 32,
       marginTop: 4,
       justifyContent: 'center',
@@ -53,7 +53,7 @@ export default function ToDoCard({
   return (
     <View style={styles.container}>
       <TouchableOpacity style={styles.checkBox} onPress={handleCheckedChange}>
-        {checked && <Ionicons name="checkmark" size={32} color="black" />}
+        {checked && <Ionicons name="checkmark" size={32} color="blue" />}
       </TouchableOpacity>
       <View>
         <Text style={styles.title}>{title}</Text>

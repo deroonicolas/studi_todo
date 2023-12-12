@@ -1,3 +1,4 @@
+/* eslint-disable no-alert */
 // eslint-disable-next-line import/no-extraneous-dependencies
 import AsyncStorage from '@react-native-async-storage/async-storage'
 import { useEffect } from 'react'
@@ -25,17 +26,18 @@ export default function useAsyncStorageCRUD() {
   }, [])
 
   // Create
-  async function todoCreate(toDo) {
+  async function toDoCreate(toDo) {
     // Nouveau tableau
     const newtoDoList = [...toDoList]
     newtoDoList.push(toDo)
     const jsonValue = JSON.stringify(newtoDoList)
     await AsyncStorage.setItem('toDoList', jsonValue)
     toDoListChange(newtoDoList)
+    alert('La tâche a bien été créée')
   }
 
   // Update
-  async function todoUpdate(index, toDo) {
+  async function toDoUpdate(index, toDo) {
     // Nouveau tableau
     const newtoDoList = [...toDoList]
     // Remplacement avec le 3eme argument
@@ -43,17 +45,19 @@ export default function useAsyncStorageCRUD() {
     const jsonValue = JSON.stringify(newtoDoList)
     await AsyncStorage.setItem('toDoList', jsonValue)
     toDoListChange(newtoDoList)
+    alert('La tâche a bien été modfiée')
   }
 
   // Delete
-  async function todoDelete(index) {
+  async function toDoDelete(index) {
     // Nouveau tableau
     const newtoDoList = [...toDoList]
     newtoDoList.splice(index, 1)
     const jsonValue = JSON.stringify(newtoDoList)
     await AsyncStorage.setItem('toDoList', jsonValue)
     toDoListChange(newtoDoList)
+    alert('La tâche a bien été supprimée')
   }
 
-  return { toDoList, todoCreate, todoUpdate, todoDelete }
+  return { toDoList, toDoCreate, toDoUpdate, toDoDelete }
 }
