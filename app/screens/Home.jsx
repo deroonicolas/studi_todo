@@ -4,7 +4,7 @@
 /* eslint-disable react/prop-types */
 /* eslint-disable react/jsx-no-bind */
 import * as React from 'react'
-import { StyleSheet, ScrollView } from 'react-native'
+import { Image, StyleSheet, ScrollView } from 'react-native'
 import Button from '@components/UI/Button'
 import Title from '@components/UI/Title'
 import useAsyncStorageCRUD from '@hooks/useAsyncStorageCRUD'
@@ -19,14 +19,22 @@ function Home({ navigation }) {
       justifyContent: 'center',
       padding: 16,
     },
+    image: {
+      width: 72,
+      height: 78,
+      marginBottom: 15,
+    },
   })
   function handlePress() {
     navigation.navigate('ToDoCreate')
   }
   const { toDoList, toDoUpdate, toDoDelete } = useAsyncStorageCRUD()
+  // eslint-disable-next-line global-require
+  const image = require('../../assets/todo.webp')
   return (
     <ScrollView contentContainerStyle={styles.container}>
       <Title>Mon appli ToDo</Title>
+      <Image style={styles.image} source={image} />
       {toDoList.map(({ title, description, checked }, index) => {
         function handleDelete() {
           toDoDelete(index)
@@ -45,8 +53,8 @@ function Home({ navigation }) {
           />
         )
       })}
-      <Button title="Aller à la page de création" onPress={handlePress}>
-        Aller à la page de création
+      <Button title="Créer une nouvelle tâche" onPress={handlePress}>
+        Créer une nouvelle tâche
       </Button>
     </ScrollView>
   )

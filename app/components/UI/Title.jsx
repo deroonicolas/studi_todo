@@ -7,7 +7,7 @@ export default function Title({ children }) {
     title: {
       fontWeight: '600',
       fontSize: 32,
-      marginBottom: 42,
+      marginBottom: 16,
     },
   })
   return <Text style={styles.title}>{children}</Text>
